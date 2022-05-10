@@ -1,0 +1,45 @@
+<div class="m-4 bg-light">
+   <span> ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br>
+   <span> ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+</div>
+
+<h3 class="m-4 bg-light">
+    Department Details
+</h3>
+
+<div class="m-4 bg-secondary">
+   Department ID : {{dept.id}} - Department Name: {{dept.deptName}} - Department Location : {{dept.location}} 
+</div>
+
+<div class="m-4">
+    <input type="text" [(ngModel)]="ndept.id">
+    <input type="text" [(ngModel)]="ndept.deptName">
+    <input type="text" [(ngModel)]="ndept.location">
+
+    <button class="btn btn-info m-1" (click)="add()">Add</button>
+</div>
+
+<table class="table table-bordered table-hover table-stripped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of depts">
+            <th>{{item.id}}</th>
+            <th>{{item.deptName}}</th>
+            <th>{{item.location}}</th>
+            <th> 
+                 <button class="btn btn-info m-1" (click)="show(item.id)">Show</button>
+                 <button class="btn btn-info m-1" (click)="edit(item.id)">Edit</button>
+                 <button class="btn btn-info m-1" (click)="delete(item.id)">Delete</button> 
+            </th>
+        </tr>
+    </tbody>
+</table>
+
