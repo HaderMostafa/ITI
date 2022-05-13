@@ -1,0 +1,29 @@
+
+<!-- <a routerLink="/departments/add">Add Department</a>  -->
+<button (click)="showAdd()">show add</button>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of deptlst">
+            <td>{{item._id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.location}}</td>
+            <td>
+                <a [routerLink]="['/departments/details',item._id]">Details</a>                       
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<!-- <router-outlet></router-outlet> -->
