@@ -8,6 +8,7 @@ import { StudentService } from './student.service';
   styleUrls: ['./app.component.css'],
   //providers:[DepartmentService,StudentService]
 })
+
 export class AppComponent {
   title = 'Task5';
 }

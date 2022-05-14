@@ -10,6 +10,9 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { AboutComponent } from './about/about.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CoreModule } from './core/core.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,13 @@ import { CoreModule } from './core/core.module';
     HomeComponent,
     ContactusComponent,
     AboutComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,CoreModule
+    AppRoutingModule,CoreModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
