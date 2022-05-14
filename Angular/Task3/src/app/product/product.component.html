@@ -1,0 +1,50 @@
+ <h3 class="m-4 bg-light">
+     Product Details
+ </h3>
+ 
+ <div class="m-4">
+    Product ID : {{prod.id}} - Product Name: {{prod.product}} - Product Code: {{prod.code| stringConvert}} - Product Date: {{prod.Available | date: "MMM d, y"}} - Product Price: {{prod.price}} - Product Rating: {{prod.star_rating}} 
+ </div>
+ <div class="m-5"> Search <input class="m-1" style="width:150px" type="text" ></div>
+
+
+ <div class="m-5">
+     <input class="m-1" style="width:150px" type="text" [(ngModel)]="nprod.id">
+     <input class="m-1" style="width:150px" type="text" [(ngModel)]="nprod.product">
+     <input class="m-1" style="width:150px" type="text" [(ngModel)]="nprod.code">
+     <input class="m-1" style="width:150px" type="text" [(ngModel)]="nprod.Available">
+     <input class="m-1" style="width:150px" type="text" [(ngModel)]="nprod.price">
+     <input class="m-1" style="width:150px" type="text" [(ngModel)]="nprod.star_rating">
+
+     <button class="btn btn-info m-1" (click)="add()">Add</button>
+ </div>
+ 
+ <table class="table table-bordered table-hover table-stripped">
+     <thead>
+         <tr>
+             <th>ID</th>
+             <th>Name</th>
+             <th>Code</th>
+             <th>Available</th>
+             <th>Price</th>
+             <th>Star Rating</th>
+             <th>Actions</th>
+         </tr>
+     </thead>
+     
+     <tbody>
+         <tr *ngFor="let item of prods" >
+             <th>{{item.id}}</th>
+             <th>{{item.product}}</th>
+             <th>{{item.code|stringConvert}}</th>
+             <th>{{item.Available|date:"MMM d, y"}}</th>
+             <th>{{item.price}}</th>
+             <th><p-rating [(ngModel)]="item.star_rating" [readonly]="true" [stars]="5" [cancel]="false"></p-rating></th>
+             <th> 
+                  <button class="btn btn-info m-1" (click)="show(item.id)">Show</button>
+                  <button class="btn btn-info m-1" (click)="edit(item.id)">Edit</button>
+                  <button class="btn btn-info m-1" (click)="delete(item.id)">Delete</button> 
+             </th>
+         </tr>
+     </tbody>
+ </table>
