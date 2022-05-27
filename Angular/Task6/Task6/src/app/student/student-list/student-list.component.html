@@ -1,0 +1,21 @@
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department Number</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of stdlst">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.deptno}}</td>
+        </tr>
+    </tbody>
+
+</table>
